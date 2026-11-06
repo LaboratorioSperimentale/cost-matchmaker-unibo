@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Esplora COST Actions | LILEC</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body data-page="explore">
+  <a class="skip-link" href="#main">Vai al contenuto</a>
+
+  <header class="institutional-header">
+    <div class="topbar"></div>
+    <div class="header-inner">
+      <img src="assets/logo-lilec.jpg"
+           alt="Alma Mater Studiorum - Dipartimento di Lingue, Letterature e Culture Moderne"
+           class="department-logo">
+      <nav aria-label="Navigazione principale">
+        <a href="index.html" data-page="match">Matchmaking</a>
+        <a href="esplora.html" data-page="explore">Esplora tutte le Actions</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero compact">
+      <div class="hero-inner">
+        <p class="eyebrow">Archivio COST</p>
+        <h1>Esplora tutte le Actions</h1>
+        <p class="lead">Consulta il dataset completo e filtra per testo, stato, area scientifica e anno di scadenza.</p>
+      </div>
+    </section>
+
+    <section class="content-section explore">
+      <div class="filter-panel">
+        <div class="filter-grid">
+          <label>Ricerca libera
+            <input id="freeSearch" placeholder="Codice, titolo o keyword">
+          </label>
+          <label>Stato
+            <select id="statusFilter"><option value="">Tutti</option></select>
+          </label>
+          <label>Macro-area
+            <select id="areaFilter"><option value="">Tutte</option></select>
+          </label>
+          <label>Anno di scadenza
+            <select id="yearFilter"><option value="">Tutti</option></select>
+          </label>
+          <label>Scadenza
+            <select id="timeFilter">
+              <option value="all">Tutte</option>
+              <option value="future">Non ancora scadute</option>
+              <option value="past">Scadute</option>
+            </select>
+          </label>
+          <label>Ordina per
+            <select id="exploreSort">
+              <option value="end">Scadenza Action</option>
+              <option value="code">Codice</option>
+              <option value="title">Titolo</option>
+            </select>
+          </label>
+        </div>
+        <div class="actions">
+          <button id="clearFilters" class="ghost">Azzera filtri</button>
+        </div>
+      </div>
+
+      <div class="list-head">
+        <p id="exploreCount"></p>
+        <span id="dataStatus" class="data-status">Caricamento dati…</span>
+      </div>
+
+      <div id="exploreResults" class="results"></div>
+      <div class="load-wrap">
+        <button id="loadMore" class="secondary" hidden>Mostra altri risultati</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div>
+      <strong>COST Action Matchmaker</strong>
+      <span>LILEC · Alma Mater Studiorum – Università di Bologna</span>
+    </div>
+    <p>Dati letti dal CSV allegato. Verificare sempre informazioni e modalità di partecipazione sulle pagine ufficiali COST.</p>
+  </footer>
+</body>
+</html>

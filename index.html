@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>COST Action Matchmaker | LILEC</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body data-page="match">
+  <a class="skip-link" href="#main">Vai al contenuto</a>
+
+  <header class="institutional-header">
+    <div class="topbar"></div>
+    <div class="header-inner">
+      <img src="assets/logo-lilec.jpg"
+           alt="Alma Mater Studiorum - Dipartimento di Lingue, Letterature e Culture Moderne"
+           class="department-logo">
+      <nav aria-label="Navigazione principale">
+        <a href="index.html" data-page="match">Matchmaking</a>
+        <a href="esplora.html" data-page="explore">Esplora tutte le Actions</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="hero-inner">
+        <p class="eyebrow">Ricerca e networking europeo</p>
+        <h1>COST Action Matchmaker</h1>
+        <p class="lead">
+          Inserisci le tue parole chiave. Verranno mostrate esclusivamente le Actions
+          con una corrispondenza nel titolo, nelle parole chiave ufficiali o nell'area scientifica.
+        </p>
+      </div>
+    </section>
+
+    <section class="search-shell">
+      <div class="search-card">
+        <div class="section-heading">
+          <div>
+            <p class="step">01</p>
+            <h2>Interessi di ricerca</h2>
+          </div>
+          <span id="dataStatus" class="data-status">Caricamento dati…</span>
+        </div>
+
+        <label for="keywords">Parole chiave</label>
+        <div class="keyword-entry">
+          <input id="keywords" placeholder="Es. digital humanities, multilingualism, translation">
+          <button id="addKeyword" class="secondary" type="button">Aggiungi</button>
+        </div>
+        <div id="keywordTags" class="tags"></div>
+        <p class="help">
+          Separa i termini con virgola, punto e virgola oppure Invio.
+          Per risultati migliori usa anche termini inglesi presenti nel dataset COST.
+        </p>
+
+        <div class="actions">
+          <button id="matchButton" class="primary" type="button">Trova le Actions compatibili</button>
+          <button id="resetButton" class="ghost" type="button">Cancella</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="resultsSection" class="content-section" hidden>
+      <div class="results-toolbar">
+        <div>
+          <p class="step">02</p>
+          <h2>Actions compatibili</h2>
+          <p id="resultCount"></p>
+        </div>
+        <label>Ordina per
+          <select id="sortBy">
+            <option value="score">Miglior corrispondenza</option>
+            <option value="end">Scadenza Action</option>
+            <option value="title">Titolo</option>
+          </select>
+        </label>
+      </div>
+      <div id="results" class="results"></div>
+    </section>
+
+    <section class="note">
+      <strong>Criterio trasparente</strong>
+      <p>
+        Una Action entra nei risultati solo se almeno una parola inserita corrisponde al titolo,
+        alle <em>Keywords of the action</em> o alla
+        <em>Science field / research area addressed by the action</em> del CSV.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <div>
+      <strong>COST Action Matchmaker</strong>
+      <span>LILEC · Alma Mater Studiorum – Università di Bologna</span>
+    </div>
+    <p>Dati letti dal CSV allegato. Verificare sempre informazioni e modalità di partecipazione sulle pagine ufficiali COST.</p>
+  </footer>
+</body>
+</html>
